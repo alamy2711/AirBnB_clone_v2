@@ -26,7 +26,8 @@ def do_pack():
     opt_sub = re.sub(r'[^\w\s]', '', string_name)
 
     # Create the tar archive with the web_static directory
-    tar = local('tar -cvzf versions/web_static_{}.tgz web_static'.format(opt_sub))
+    tar = local('tar -cvzf versions/web_static_{}.tgz web_static'.format(
+        opt_sub))
 
     # Check if the archive was successfully created
     if os.path.exists("./versions/web_static_{}.tgz".format(opt_sub)):
