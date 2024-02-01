@@ -9,7 +9,7 @@ import os.path
 
 # Set default environment variables for Fabric
 env.user = 'ubuntu'
-env.hosts = ["104.196.155.240", "34.74.146.120"]
+env.hosts = ["52.91.147.15", "52.91.147.53"]
 env.key_filename = "~/id_rsa"
 
 
