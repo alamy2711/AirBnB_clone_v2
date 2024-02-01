@@ -22,14 +22,14 @@ def do_pack():
     target = local("mkdir -p versions")
 
     # Generate a unique name for the archive based on the current timestamp
-    name = str(datetime.now()).replace(" ", '')
-    opt = re.sub(r'[^\w\s]', '', name)
+    string_name = str(datetime.now()).replace(" ", '')
+    opt_sub = re.sub(r'[^\w\s]', '', string_name)
 
     # Create the tar archive with the web_static directory
-    tar = local('tar -cvzf versions/web_static_{}.tgz web_static'.format(opt))
+    tar = local('tar -cvzf versions/web_static_{}.tgz web_static'.format(opt_sub))
 
     # Check if the archive was successfully created
-    if os.path.exists("./versions/web_static_{}.tgz".format(opt)):
-        return os.path.normpath("/versions/web_static_{}.tgz".format(opt))
+    if os.path.exists("./versions/web_static_{}.tgz".format(opt_sub)):
+        return os.path.normpath("/versions/web_static_{}.tgz".format(opt_sub))
     else:
         return None
